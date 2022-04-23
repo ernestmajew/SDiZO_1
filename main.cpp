@@ -129,11 +129,11 @@ void fileMenu(){
 
 void testMenu(){
     system("cls");
-    cout<<"[Menu testu]\n\nWybierz opcje:\n[1] Test listy.\n[2] Test tablicy\n[3] Test kopca\n [4] Wszystkie testy\n [5] Poprzednie menu\n";
+    cout<<"[Menu testu]\n\nWybierz opcje:\n[1] Test listy.\n[2] Test tablicy\n[3] Test kopca\n[4] Wszystkie testy\n[5] Poprzednie menu\n";
     int choice = 0;
     do{
         cin>>choice;
-    }while(choice != 1 && choice != 2 && choice != 3 && choice != 4);
+    }while(choice != 1 && choice != 2 && choice != 3 && choice != 4 && choice != 5);
 
     switch(choice){
         case 1:{system("cls");
@@ -188,7 +188,7 @@ void heapMenu(MaxHeap heap){
         }
         case 4: {
             cin>>value;
-            cout<<heap.contains(value)<<"\n\nNaciśnij enter aby kontynuowac...";
+            cout<<"0 - nie zawiera\n1 - zawiera\n"<<heap.contains(value)<<"\n\nNaciśnij enter aby kontynuowac...";
             system("pause");
             heapMenu(heap);
         }
@@ -241,7 +241,7 @@ void listMenu(DLL dll){
         }
         case 7: {
             cin>>value;
-            cout<<dll.contains(value)<<"\n\nNaciśnij enter aby kontynuowac...";
+            cout<<"0 - nie zawiera\n1 - zawiera\n"<<dll.contains(value)<<"\n\nNacisnij enter aby kontynuowac...";
             system("pause");
             listMenu(dll);
         }
@@ -255,8 +255,8 @@ void listMenu(DLL dll){
 void arrayMenu(Array array){
     system("cls");
     array.print();
-    string botMenu = "\n\nWybierz opcje:\n[1] Dodaj na początku (value), [2] Dodaj na koncu (value), [3] Dodaj w wybranym miejscu (index, value)\n"
-                     "[4] Usun na początku (), [5] Usun na koncu (), [6] Usun w wybranym miejscu (index)\n[7] Sprawdz czy zawiera (value), [8] Poprzednie menu ()";
+    string botMenu = "\n\nWybierz opcje:\n[1] Dodaj na poczatku (value), [2] Dodaj na koncu (value), [3] Dodaj w wybranym miejscu (index, value)\n"
+                     "[4] Usun na poczatku (), [5] Usun na koncu (), [6] Usun w wybranym miejscu (index) [7] Sprawdz czy zawiera (value), \n[8] Poprzednie menu ()";
     cout<< botMenu;
     int choice = 0, value = 0, index = 0;
     do{
@@ -295,7 +295,7 @@ void arrayMenu(Array array){
         }
         case 7: {
             cin>>value;
-            cout<<array.contains(value)<<"\n\nNaciśnij enter aby kontynuowac...";
+            cout<<"0 - nie zawiera\n1 - zawiera\n"<<array.contains(value)<<"\n\nNacisnij enter aby kontynuowac...";
             system("pause");
             arrayMenu(array);
         }
