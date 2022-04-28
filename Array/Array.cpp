@@ -20,7 +20,7 @@ bool Array::increaseSize(int offsetAt) {
     //Kopiujemy starą tablice do nowej o jeden większej
     int *tempTable = new int[arraySize + 1];
     for (int i = 0; i < arraySize; ++i) {
-        //Pomijamy przeskakujemy jedno pole zgodnie z zadanym odchyleniem
+        //Pomijamy jedno pole zgodnie z zadanym odchyleniem
         if(i>=offsetAt){tempTable[i + 1] = arrayPointer[i];}
         else{tempTable[i] = arrayPointer[i];}
     }
@@ -60,6 +60,7 @@ void Array::print() {
 void Array::insertAt(int offset, int value) {
     if (offset < 0 || offset > arraySize) {return;}
     else {
+        // Wpisujemy nową wartość w pominięty przy powiększaniu tablicy indeks
         increaseSize(offset);
         arrayPointer[offset] = value;
     }

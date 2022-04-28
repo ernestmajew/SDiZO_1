@@ -19,5 +19,6 @@ public:
     void removeRoot();
     bool contains(int value);
     int getMidElement();
-    std::string print();
+    void printHeap();
+    void printHeap(const int *heapPointer, int heapSize);
 };
